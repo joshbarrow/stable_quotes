@@ -1,7 +1,14 @@
 module Api
   class QuotesController < ApiController
     def update
-      quote = Quote.find(params.fetch(:id)).update(data: {confirmed: true})
+      quote = Quote.find(params.fetch(:id))
+      quote.data = quote.data.merge(params.require(:data).permit(:confirmed))
+      quote.save
+      render json: quote
+    end
+
+    def show
+      quote = Quote.find params.fetch(:id)
       render json: quote
     end
 
