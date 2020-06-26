@@ -34,9 +34,13 @@ export default withRouter( ({match: { params: { id } }}) => {
     return <Redirect to="/quotes/receipt" />
   }
 
+  const formattedPrice = new Intl.NumberFormat('en-US',
+    { style: 'currency', currency: 'USD' }
+  ).format(quote.price)
+
   return(
     <div>
-      <h1>Your quote is {quote.data.quote}</h1>
+      <h1>Your quote is {formattedPrice}</h1>
       <h2>Would you like to purchase?</h2>
       <button onClick={confirm}>Yes</button>
       <button>No</button>

@@ -18,7 +18,6 @@ module Api
           email: params.fetch(:email),
           tlc: params.fetch(:tlc),
           name: params.fetch(:name),
-          quote: nil,
           confirmed: false,
         }
       )
