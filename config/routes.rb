@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "quotes", to: "react#app"
+  get "quotes/confirm", to: "react#app"
+  get "quotes/receipt", to: "react#app"
 end
