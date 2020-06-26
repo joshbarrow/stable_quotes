@@ -4,6 +4,7 @@ import {
   Redirect
 } from 'react-router-dom'
 import axios from 'axios'
+import "./Confirm.scss"
 
 
 export default withRouter( ({match: { params: { id } }}) => {
@@ -39,7 +40,7 @@ export default withRouter( ({match: { params: { id } }}) => {
   ).format(quote.price)
 
   return(
-    <div>
+    <div id="confirm">
       <h1>Your quote is {formattedPrice}</h1>
       <h2>Would you like to purchase?</h2>
       <button onClick={confirm}>Yes</button>
