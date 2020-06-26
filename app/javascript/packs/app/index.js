@@ -14,7 +14,7 @@ export default () => {
     <Router>
       <Switch>
         <Route exact path="/quotes" component={QuotesPage}/>
-        <Route exact path="/quotes/confirm" component={ConfirmPage} />
+        <Route exact path="/quotes/:id/confirm" component={ConfirmPage} />
         <Route exact path="/quotes/receipt" component={ReceiptPage} />
       </Switch>
     </Router>

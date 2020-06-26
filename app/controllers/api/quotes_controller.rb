@@ -1,10 +1,10 @@
 module Api
-  class QuotesController < ApplicationController
+  class QuotesController < ApiController
     def update
       quote = Quote.find(params.fetch(:id)).update(data: {confirmed: true})
       render json: quote
     end
-    
+
     def create
       quote = Quote.create(
         data: {
