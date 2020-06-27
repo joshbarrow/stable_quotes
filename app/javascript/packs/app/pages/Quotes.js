@@ -26,13 +26,13 @@ export default () => {
     <Form id="quotes">
       <h1>Get a quote</h1>
       <Form.Item>
-        <Input onChange={setName} placeholder="Name" />
+        <Input onChange={event => setName(event.target.value)} placeholder="Name" />
       </Form.Item>
       <Form.Item>
-        <Input onChange={setEmail} placeholder="Email" />
+        <Input onChange={event => setEmail(event.target.value)} placeholder="Email" />
       </Form.Item>
       <Form.Item>
-        <Input onChange={setTlc} placeholder="TLC #" />
+        <Input onChange={event => setTlc(event.target.value)} placeholder="TLC #" />
       </Form.Item>
       <Form.Item>
         <button onClick={submitForm}>
