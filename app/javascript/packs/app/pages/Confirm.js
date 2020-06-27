@@ -4,11 +4,13 @@ import {
   Redirect
 } from 'react-router-dom'
 import axios from 'axios'
+import "./Confirm.scss"
 
 
 export default withRouter( ({match: { params: { id } }}) => {
   const [quote, setQuote] = useState(null)
   const [confirmed, setConfirmed] = useState(false)
+  const [declined, setDeclined] = useState(false)
 
   console.log(id);
   useEffect( () => {
@@ -30,8 +32,16 @@ export default withRouter( ({match: { params: { id } }}) => {
     setConfirmed(true)
   }
 
+  async function decline() {
+    setDeclined(true)
+  }
+
   if (confirmed) {
     return <Redirect to="/quotes/receipt" />
+  }
+
+  if (declined) {
+    return <Redirect to="/quotes" />
   }
 
   const formattedPrice = new Intl.NumberFormat('en-US',
@@ -39,11 +49,11 @@ export default withRouter( ({match: { params: { id } }}) => {
   ).format(quote.price)
 
   return(
-    <div>
+    <div id="confirm">
       <h1>Your quote is {formattedPrice}</h1>
       <h2>Would you like to purchase?</h2>
       <button onClick={confirm}>Yes</button>
-      <button>No</button>
+      <button onClick={decline}>No</button>
     </div>
   )
 })

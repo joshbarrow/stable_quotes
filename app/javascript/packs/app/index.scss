@@ -1,0 +1,31 @@
+$purple: #3023ae;
+
+#layout {
+  header {
+    background: white;
+  }
+  .ant-input {
+    width: 45%;
+  }
+  #content {
+    padding: 6vw 20vw;
+    background: white;
+  }
+}
+
+h1 {
+  font-size: 50px;
+  color: #333;
+}
+
+button {
+  color: white;
+  background: $purple;
+  border-color: $purple;
+  padding: 8px 32px;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 20px;
+  cursor: pointer;
+}

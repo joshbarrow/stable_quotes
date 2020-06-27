@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import { Form, Input, InputNumber, Button, UserOutlined} from 'antd'
+import "./Quotes.scss"
+
 
 export default () => {
 
@@ -19,11 +22,23 @@ export default () => {
   }
 
   return(
-    <div>
-      <input onChange={event => setName(event.target.value)}/>
-      <input onChange={event => setEmail(event.target.value)}/>
-      <input onChange={event => setTlc(event.target.value)}/>
-      <button onClick={submitForm}>Submit</button>
-    </div>
+
+    <Form id="quotes">
+      <h1>Get a quote</h1>
+      <Form.Item>
+        <Input onChange={event => setName(event.target.value)} placeholder="Name" />
+      </Form.Item>
+      <Form.Item>
+        <Input onChange={event => setEmail(event.target.value)} placeholder="Email" />
+      </Form.Item>
+      <Form.Item>
+        <Input onChange={event => setTlc(event.target.value)} placeholder="TLC #" />
+      </Form.Item>
+      <Form.Item>
+        <button onClick={submitForm}>
+          Submit
+        </button>
+      </Form.Item>
+    </Form>
   )
 }
